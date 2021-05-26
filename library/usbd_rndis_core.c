@@ -688,6 +688,6 @@ bool rndis_send(const void *data, int size)
 	rndis_tx_size = size;
 	rndis_sended = 0;
 	__enable_irq();
-
+	usbd_cdc_transfer(&USB_OTG_dev);
 	return true;
 }
